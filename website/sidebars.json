@@ -1,0 +1,8 @@
+{
+  "docs": {
+    "Getting Started": ["Installation","CLI-app"],
+    "Guide": ["quick-start","sdk-guide","guide-cli","profile-guide","event-guide","segment-guide"],
+    "CLI": ["CLI"],
+    "API/SDK": ["doc1","internals-sdk","condition-sdk"]
+  }
+}
