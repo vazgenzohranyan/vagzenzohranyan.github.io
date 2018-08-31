@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Quick Start · Test Site</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Here is the way to start using Personic SDK."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Quick Start · Test Site"/><meta property="og:type" content="website"/><meta property="og:url" content="https://your-docusaurus-test-site.com/index.html"/><meta property="og:description" content="Here is the way to start using Personic SDK."/><meta property="og:image" content="https://your-docusaurus-test-site.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://your-docusaurus-test-site.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-lakeside-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://your-docusaurus-test-site.com/blog/atom.xml" title="Test Site Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://your-docusaurus-test-site.com/blog/feed.xml" title="Test Site Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/docusaurus.svg" alt="Test Site"/><h2 class="headerTitleWithLogo">Test Site</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/Installation.html" target="_self">Docs</a></li><li class=""><a href="/en/help.html" target="_self">Help</a></li><li class=""><a href="/blog" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul><li class="navListItem"><a class="navItem" href="/docs/Installation.html">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/CLI-app.html">Creating your app</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guide</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/quick-start.html">Quick Start</a></li><li class="navListItem"><a class="navItem" href="/docs/sdk-guide.html">SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-cli.html">CLI</a></li><li class="navListItem"><a class="navItem" href="/docs/profile-guide.html">Profile</a></li><li class="navListItem"><a class="navItem" href="/docs/event-guide.html">Event</a></li><li class="navListItem"><a class="navItem" href="/docs/segment-guide.html">Segment</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">CLI</h3><ul><li class="navListItem"><a class="navItem" href="/docs/CLI.html">CLI commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API/SDK</h3><ul><li class="navListItem"><a class="navItem" href="/docs/doc1.html">SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/internals-sdk.html">Internals</a></li><li class="navListItem"><a class="navItem" href="/docs/condition-sdk.html">Conditions</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Quick Start</h1></header><article><div><span><p>Here is the way to start using Personic SDK.</p>
+<h2><a class="anchor" aria-hidden="true" id="step-1-installation"></a><a href="#step-1-installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 1 - installation</h2>
+<pre><code class="hljs css language-bash">    npm i personic
+</code></pre>
+<p>Install personic with <code>npm</code>.</p>
+<p>For more about installing <code>presonic</code> and <code>personic-cli</code> see <a href="/docs/Installation.html">Installation</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="step-2-creating-sdk-client"></a><a href="#step-2-creating-sdk-client" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 2 - creating SDK client</h2>
+<p>Require it in your project and create SDK.</p>
+<pre><code class="hljs css language-javascript">    <span class="hljs-keyword">import</span> Personic <span class="hljs-keyword">from</span> <span class="hljs-string">'personic'</span>
+    
+    <span class="hljs-comment">// Create new SDK with app id</span>
+    <span class="hljs-keyword">let</span> sdk = <span class="hljs-keyword">new</span> Personic(<span class="hljs-string">'123456789abcd'</span>)
+</code></pre>
+<p>In order to create SDK you first need to create <a href="/docs/CLI-app.html">application</a>.</p>
+<p>In order to find application id you can use <a href="/docs/CLI.html">CLI</a> command.</p>
+<h2><a class="anchor" aria-hidden="true" id="step-3-adding-and-identifying-users"></a><a href="#step-3-adding-and-identifying-users" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 3 - adding and identifying users</h2>
+<p>Start adding users in your application.</p>
+<p>In order to do it</p>
+<pre><code class="hljs css language-javascript">    sdk.indentify(<span class="hljs-string">'user_id'</span>)
+      .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'User identified'</span>))
+</code></pre>
+<p>Then in your console you will see the result of request.</p>
+<pre><code class="hljs"><span class="hljs-selector-tag">Request</span> <span class="hljs-selector-tag">Data</span>:
+ { <span class="hljs-attribute">method</span>: <span class="hljs-string">'POST'</span>,
+  <span class="hljs-attribute">url</span>: <span class="hljs-string">'http://127.0.0.1:9000/api/v1/identify'</span>,
+  <span class="hljs-attribute">body</span>: 
+   { <span class="hljs-attribute">app_id</span>: <span class="hljs-string">'123456789abcd'</span>,
+     <span class="hljs-attribute">user_id</span>: null,
+     <span class="hljs-attribute">sdk</span>: <span class="hljs-string">'personic-sdk'</span>,
+     <span class="hljs-attribute">v</span>: <span class="hljs-string">'v1'</span>,
+     <span class="hljs-attribute">api_data</span>: { <span class="hljs-attribute">user_id</span>: <span class="hljs-string">'user_id'</span> },
+     <span class="hljs-attribute">hash</span>: <span class="hljs-string">'39e6ded62332644dfde27f25515f93bc'</span> },
+  <span class="hljs-attribute">json</span>: true,
+  <span class="hljs-attribute">encoding</span>: <span class="hljs-string">'utf8'</span> }
+<span class="hljs-selector-tag">Identify</span> <span class="hljs-selector-tag">Result</span>:
+ { <span class="hljs-attribute">token</span>: <span class="hljs-string">'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiam9obl8xNyIsInVoIjoiYWFhX2pvaG5fMTciLCJhcHBfaWQiOiJhYWEiLCJzaWQiOiI1OTEzNjBjMGJlNzZjYTAzIiwiZXhwIjoxNTM0MDc1NDAxMjEyLCJpc3UiOjE1MzQwNzE4MDEyMTJ9.ySAuHQhO3i3gYeCg7qvKr_3syik4HHtqgE0pS2awzmE'</span>,
+  <span class="hljs-attribute">up</span>: {},
+  <span class="hljs-attribute">upv</span>: <span class="hljs-number">1</span> }
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="step-4-updating-profile"></a><a href="#step-4-updating-profile" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 4 - updating profile</h2>
+<p>Add some properties to user profile using SDK.</p>
+<pre><code class="hljs css language-javascript">    sdk.getProfile().set(<span class="hljs-string">'age'</span>, <span class="hljs-string">'16'</span>)
+    .then(<span class="hljs-function">(<span class="hljs-params">pofile</span>) =&gt;</span> {
+      <span class="hljs-built_in">console</span>.log(profile)
+    });
+</code></pre>
+<p><code>profile</code> contains updated profile of user.</p>
+<pre><code class="hljs">    { <span class="hljs-attribute">upv</span>: <span class="hljs-number">1534072175</span>, up: { age: <span class="hljs-number">16</span> } }
+</code></pre>
+<table>
+<thead>
+<tr><th>Result property</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>upv</code></td><td>Version of user profile</td></tr>
+<tr><td><code>up</code></td><td>User profile data</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="step-5-tracking-user"></a><a href="#step-5-tracking-user" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 5 - tracking user</h2>
+<p>Track your users using sdk.</p>
+<pre><code class="hljs css language-javascript">    sdk.track(<span class="hljs-string">'login'</span>, {<span class="hljs-string">'dat'</span>: <span class="hljs-built_in">Date</span>.now()})
+      .then(<span class="hljs-function">(<span class="hljs-params">result</span>)=&gt;</span> <span class="hljs-built_in">console</span>.log(result));
+</code></pre>
+<p>In your console you will see request info and the result.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">Request</span> <span class="hljs-selector-tag">Data</span>:
+     { <span class="hljs-attribute">method</span>: <span class="hljs-string">'POST'</span>,
+      <span class="hljs-attribute">url</span>: <span class="hljs-string">'http://127.0.0.1:9000/api/v1/track'</span>,
+      <span class="hljs-attribute">body</span>: 
+       { <span class="hljs-attribute">app_id</span>: <span class="hljs-string">'aaa'</span>,
+         <span class="hljs-attribute">user_id</span>: <span class="hljs-string">'asd'</span>,
+         <span class="hljs-attribute">sdk</span>: <span class="hljs-string">'personic-sdk'</span>,
+         <span class="hljs-attribute">v</span>: <span class="hljs-string">'v1'</span>,
+         <span class="hljs-attribute">token</span>: <span class="hljs-string">'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYXNkIiwidWgiOiJhYWFfYXNkIiwiYXBwX2lkIjoiYWFhIiwic2lkIjoiMTM4ZDdiMmUyNWE4OGZhNSIsImV4cCI6MTUzNDA3NTk5OTQ2NCwiaXN1IjoxNTM0MDcyMzk5NDY0fQ.idkrCKAibe2konG2hiiHyMVgJ5ebNPThQufaUt8wf7I'</span>,
+         <span class="hljs-attribute">api_data</span>: { <span class="hljs-attribute">evn</span>: <span class="hljs-string">'buy'</span>, <span class="hljs-attribute">evd</span>: [Object] },
+         <span class="hljs-attribute">hash</span>: <span class="hljs-string">'21227d1f63e1102265dbbb9fb9811bfe'</span> },
+      <span class="hljs-attribute">json</span>: true,
+      <span class="hljs-attribute">encoding</span>: <span class="hljs-string">'utf8'</span> }
+    <span class="hljs-comment">// Result object</span>
+    { <span class="hljs-attribute">success</span>: <span class="hljs-number">1</span>, <span class="hljs-attribute">v</span>: <span class="hljs-number">3</span> }
+</code></pre>
+<table>
+<thead>
+<tr><th>Result property</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>success</code></td><td>Boolean value defining the success of request(1 is true,0 otherwise)</td></tr>
+<tr><td><code>v</code></td><td>Revision number of profile</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="step-6-querying-user-with-segment"></a><a href="#step-6-querying-user-with-segment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 6 - querying user with segment</h2>
+<p>After all this you can start making queries on user.</p>
+<pre><code class="hljs css language-javascript">    <span class="hljs-keyword">import</span> {And, Or, FilterFunctions, ProfileCondition, BehaviorCondition, PropertyCondition} <span class="hljs-keyword">from</span> <span class="hljs-string">'personic'</span>
+     
+    <span class="hljs-comment">// Segment example</span>
+    
+    <span class="hljs-keyword">let</span> profileCondition = ProfileCondition(<span class="hljs-string">'age'</span>, FilterFunctions.isLessThan(<span class="hljs-number">50</span>))
+    <span class="hljs-keyword">let</span> propertyCondition = PropertyCondition(<span class="hljs-string">'date'</span>, FilterFunctions.isBetween(<span class="hljs-built_in">Date</span>.now() - <span class="hljs-number">10</span> * <span class="hljs-number">24</span> * <span class="hljs-number">3600</span> * <span class="hljs-number">1000</span>, <span class="hljs-built_in">Date</span>.now()))
+    <span class="hljs-keyword">let</span> behaviorCondition = BehaviorCondition(<span class="hljs-string">'login'</span>).where(propertyCondition).count().isMoreThan(<span class="hljs-number">10</span>)
+    <span class="hljs-keyword">let</span> segment = sdk.profileMatch(profileCondition).behaviorMatch(behaviorCondition)
+    
+    sdk.execute(segment)
+    .then(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(result))
+</code></pre>
+<p>Checks if user log ins mor than 10 times last 10 days and have age less than 50.</p>
+<p>The result example will be</p>
+<pre><code class="hljs">    { <span class="hljs-attribute">ans </span>: <span class="hljs-number">0</span> }
+</code></pre>
+<table>
+<thead>
+<tr><th>Result property</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>ans</code></td><td>1 if user is in segment,0 otherwise</td></tr>
+</tbody>
+</table>
+<p>For more see <a href="/docs/Segment.html">Segment</a>.</p>
+<p>To see more about SDK see <a href="SDK.md">SDk</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/CLI-app.html">← Creating your app</a><a class="docs-next button" href="/docs/sdk-guide.html">Personic SDK →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#step-1-installation">Step 1 - installation</a></li><li><a href="#step-2-creating-sdk-client">Step 2 - creating SDK client</a></li><li><a href="#step-3-adding-and-identifying-users">Step 3 - adding and identifying users</a></li><li><a href="#step-4-updating-profile">Step 4 - updating profile</a></li><li><a href="#step-5-tracking-user">Step 5 - tracking user</a></li><li><a href="#step-6-querying-user-with-segment">Step 6 - querying user with segment</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docusaurus.svg" alt="Test Site" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Your Name or Your Company Name</section></footer></div></body></html>
